@@ -1,15 +1,109 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
-    <title>ERS</title>
-</head>
-<body>
-    <form action="/print" method="post">
-        <input type="text" name="name">
-        <button type="submit">Submit</button>
-    </form>
-</body>
-</html>
+<link rel="stylesheet" href="css/home.css">
+    <div class="modal fade" id="adminModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content" style="background-color:lightGreen;">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">ADMIN LOGIN</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="row g-3" action="/print" method="post">
+                    <div class="col-4">
+                      <label for="staticEmail2" class="visually-hidden">Email</label>
+                      <input type="text" class="form-control" id="staticEmail2" value="email@example.com" name="admin-email">
+                    </div>
+                    <div class="col-4">
+                      <label for="inputPassword2" class="visually-hidden">Password</label>
+                      <input type="password" class="form-control" id="inputPassword2" placeholder="Password" name="admin-pword">
+                    </div>
+                    <div class="col-3">
+                      <button type="submit" class="btn btn-primary mb-3">LOGIN</button>
+                    </div>
+                  </form>
+            </div>
+            <div class="modal-footer">
+              <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="employeeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content" style="background-color:lightGreen;">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">EMPLOYEE LOGIN</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-- <div class="modal-body">
+              ...
+            </div> -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#employeeLoginModal">Login</button>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#employeeSignUpModal">Sign UP</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="employeeLoginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content" style="background-color:lightGreen;">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">EMPLOYEE LOGIN</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form class="row g-3" action="/user/signIn" method="post">
+                <div class="col-4">
+                  <label for="staticEmail2" class="visually-hidden">Email</label>
+                  <input type="text" class="form-control" id="staticEmail2" name="email">
+                </div>
+                <div class="col-4">
+                  <label for="inputPassword2" class="visually-hidden">Password</label>
+                  <input type="password" class="form-control" id="inputPassword2" placeholder="Password" name="password">
+                </div>
+                <div class="col-3">
+                  <button type="submit" class="btn btn-primary mb-3">SUBMIT</button>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <a data-bs-toggle="modal" data-bs-target="#employeeSignUpModal">Sign UP</a>
+              <button type="submit" class="btn btn-primary">SUBMIT</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="employeeSignUpModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content" style="background-color:lightGreen;">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">EMPLOYEE Sign UP</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form class="row g-3" action="/user/signUp" method="post">
+                <div class="col-4">
+                  <label for="staticEmail2" class="visually-hidden">Email</label>
+                  <input type="text" class="form-control" id="staticEmail2" name="email">
+                </div>
+                <div class="col-4">
+                  <label for="inputPassword2" class="visually-hidden">Password</label>
+                  <input type="password" class="form-control" id="inputPassword2" placeholder="Password" name="password">
+                </div>
+                <div class="col-3">
+                  <button type="submit" class="btn btn-primary mb-3">SUBMIT</button>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <a data-bs-toggle="modal" data-bs-target="#employeeLoginModal">Login</a>
+              <!-- <button type="button" class="btn btn-primary">SUBMIT</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+

@@ -1,0 +1,13 @@
+<form method="post" action="/review/create">
+    <select name="reviewee">
+        <%for(let i=0;i<locals.users.length;i++){%>
+        <option value="<%=locals.users[i].id%>"><%=locals.users[i].userEmail%></option>
+        <% } %> 
+    </select>
+    <select name="reviewer">
+        <%for(let i=0;i<locals.users.length;i++){%>
+        <option value="<%=locals.users[i].id%>"><%=locals.users[i].userEmail%></option>
+        <% } %> 
+    </select>
+    <button type="submit">  Create Review</button>
+</form>
