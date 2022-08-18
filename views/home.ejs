@@ -1,109 +1,72 @@
 <link rel="stylesheet" href="css/home.css">
-    <div class="modal fade" id="adminModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade " id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content" style="background-color:lightGreen;">
+          <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">ADMIN LOGIN</h5>
+              <h5 class="modal-title" id="exampleModalLabel">USER LOGIN</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form class="row g-3" action="/print" method="post">
-                    <div class="col-4">
-                      <label for="staticEmail2" class="visually-hidden">Email</label>
-                      <input type="text" class="form-control" id="staticEmail2" value="email@example.com" name="admin-email">
-                    </div>
-                    <div class="col-4">
-                      <label for="inputPassword2" class="visually-hidden">Password</label>
-                      <input type="password" class="form-control" id="inputPassword2" placeholder="Password" name="admin-pword">
-                    </div>
-                    <div class="col-3">
-                      <button type="submit" class="btn btn-primary mb-3">LOGIN</button>
-                    </div>
+                <form class="row g-3" action="/user/signIn" method="post">
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-at"></i></span>
+                    <input type="text" class="form-control" placeholder="Email"  aria-describedby="basic-addon1" name="email">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" class="form-control" placeholder="Password"  aria-describedby="basic-addon1" name="password">
+                  </div>
+                  <div class="col" style="margin: auto;">
+                    <button type="submit" class="btn btn-primary mb-3 col-12" >LOGIN</button>
+                  </div>
                   </form>
             </div>
             <div class="modal-footer">
               <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
               <button type="button" class="btn btn-primary">Save changes</button> -->
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="modal fade" id="employeeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content" style="background-color:lightGreen;">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">EMPLOYEE LOGIN</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <!-- <div class="modal-body">
-              ...
-            </div> -->
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#employeeLoginModal">Login</button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#employeeSignUpModal">Sign UP</button>
+              <p>Not Resistered ? <a href="#" data-bs-toggle="modal"data-bs-target="#signupModal">Register</a></p>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="modal fade" id="employeeLoginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+
+      <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content" style="background-color:lightGreen;">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">EMPLOYEE LOGIN</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <form class="row g-3" action="/user/signIn" method="post">
-                <div class="col-4">
-                  <label for="staticEmail2" class="visually-hidden">Email</label>
-                  <input type="text" class="form-control" id="staticEmail2" name="email">
-                </div>
-                <div class="col-4">
-                  <label for="inputPassword2" class="visually-hidden">Password</label>
-                  <input type="password" class="form-control" id="inputPassword2" placeholder="Password" name="password">
-                </div>
-                <div class="col-3">
-                  <button type="submit" class="btn btn-primary mb-3">SUBMIT</button>
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <a data-bs-toggle="modal" data-bs-target="#employeeSignUpModal">Sign UP</a>
-              <button type="submit" class="btn btn-primary">SUBMIT</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="modal fade" id="employeeSignUpModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content" style="background-color:lightGreen;">
+          <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">EMPLOYEE Sign UP</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <form class="row g-3" action="/user/signUp" method="post">
-                <div class="col-4">
-                  <label for="staticEmail2" class="visually-hidden">Email</label>
-                  <input type="text" class="form-control" id="staticEmail2" name="email">
+
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon3"><i class="fa-solid fa-signature"></i></span>
+                  <input type="text" class="form-control" placeholder="Name" aria-describedby="basic-addon3" name="userName">
                 </div>
-                <div class="col-4">
-                  <label for="inputPassword2" class="visually-hidden">Password</label>
-                  <input type="password" class="form-control" id="inputPassword2" placeholder="Password" name="password">
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon4"><i class="fa-solid fa-envelope"></i></span>
+                  <input type="email" class="form-control" placeholder="Email" aria-describedby="basic-addon4" name="email">
                 </div>
-                <div class="col-3">
-                  <button type="submit" class="btn btn-primary mb-3">SUBMIT</button>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon5"><i class="fa-solid fa-key"></i></span>
+                  <input type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon5" name="password">
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary mb-3 col-12">SUBMIT</button>
                 </div>
               </form>
             </div>
             <div class="modal-footer">
-              <a data-bs-toggle="modal" data-bs-target="#employeeLoginModal">Login</a>
+              <a data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
               <!-- <button type="button" class="btn btn-primary">SUBMIT</button> -->
             </div>
           </div>
         </div>
       </div>
+
 
 
 

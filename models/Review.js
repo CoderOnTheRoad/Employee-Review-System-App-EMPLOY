@@ -4,10 +4,12 @@ const reviewSchema=mongoose.Schema({
  reviewer:{
     type:mongoose.Schema.Types.ObjectId,
     required:true,
+    ref:"User",
  },
  reviewee:{
     type:mongoose.Schema.Types.ObjectId,
     required:true, 
+    ref:"User",
  },
  review:{
     type:Number,

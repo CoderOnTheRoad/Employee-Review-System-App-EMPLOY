@@ -1,0 +1,19 @@
+<!-- <%=//locals.reviewsToDo%>  -->
+
+<% for(let review of reviewsToDo){ %>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Review<%=review.id%> </h5>
+          <h6 class="card-subtitle mb-2 text-muted">for- <%=review.reviewee.userEmail%> </h6>
+          <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+          <!-- <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a> -->
+          <form action="/review/submit/<%=review.id%>" method="post">
+            <label for="rating" class="form-label">Rating</label>
+            <input type="range" class="form-range" min="0" max="5" id="rating"name="review">
+            <button type="submit" class="btn btn-warning">Submit</button>
+          </form>
+
+        </div>
+      </div>
+<% } %> 

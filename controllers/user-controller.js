@@ -32,16 +32,12 @@ module.exports.profile=function(req,res){
             return res.redirect("/");
         }
         if(user.isAdmin==false){
-            Review.find({reviwer:user.id,isSubmitted:false,},function(err,reviews){
-                // console.log(reviews);
-                return res.render("employee_profile.ejs",{title:" admin profile page",userEmail:user.userEmail,isAdmin:user.isAdmin,reviewsToDo:reviews,layout:"employee_layout"});
-            })
+
+            return res.render("employee_profile.ejs",{title:" employee profile page",userEmail:user.userEmail,isAdmin:user.isAdmin,layout:"employee_layout"});
             
         }else{
-            const users = User.find(function(err,users){
-                console.log(users);
-                return res.render("admin_profile.ejs",{title:" employee profile page",userEmail:user.userEmail,isAdmin:user.isAdmin,users:users,layout:"admin_layout"});
-            }).select("-password");
+
+            return res.render("admin_profile.ejs",{title:" admin profile page",userEmail:user.userEmail,isAdmin:user.isAdmin,layout:"admin_layout"});
 
             
         }
@@ -55,4 +51,13 @@ module.exports.logoutSession=function(req,res){
         }
     });
     return res.redirect("/");
+}
+module.exports.taskView=async function(req,res){
+    const reviews=await Review.find({reviewer:req.params.id,isSubmitted:false}).populate("reviewee");
+    // console.log(reviews);
+    if(req.user.isAdmin==false){
+        return res.render("_user_task_view.ejs",{title:"task view page",reviewsToDo:reviews,layout:"employee_layout"});
+    }else{
+        return res.render("_user_task_view.ejs",{title:"task view page",reviewsToDo:reviews,layout:"admin_layout"});
+    }
 }

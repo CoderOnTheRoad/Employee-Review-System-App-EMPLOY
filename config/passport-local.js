@@ -49,7 +49,14 @@ passport.checkAuthentication= function(req,res,next){
         return next();
     }
     //if the user is not signed in 
-    return res.rediret("/user/signIn");
+    return res.redirect("/user/signIn");
+}
+passport.checkAuthenticationAdmin=function(req,res,next){
+    //checks that the user is admin or not 
+    if(req.isAuthenticated()&&req.user.isAdmin){
+        return next();
+    }
+    return res.redirect("/");
 }
 
 //middleware to check user is signed in or not 

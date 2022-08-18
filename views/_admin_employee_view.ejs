@@ -1,0 +1,31 @@
+    <table class="table" style="text-align:center;width:100vw">
+        <thead >
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name </th>
+            <th scope="col">EID </th>
+            <th scope="col"> Email</th>
+            <th scope="col">Admin </th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% for(let i =0;i<locals.employees.length;i++){ %>
+                <tr>
+                    <th scope="row"><%=i+1%> </th>
+                    <form method="post" action="/admin/user/update/<%=locals.employees[i].id%>">
+                        <td><input class="form-control col-2 input-<%=locals.employees[i].id%>" type="text" name="userName"value=<%=locals.employees[i].userName%> aria-label="readonly input example" readonly style="width:15vw;margin:auto;"></td>
+                        <td><input class="form-control col-2 input-<%=locals.employees[i].id%>" type="text" name="EID"value=<%=locals.employees[i].EID%> aria-label="readonly input example" readonly style="width:15vw;margin:auto;"></td>
+                        <td><input class="form-control col-2 input-<%=locals.employees[i].id%>" type="text" name="userEmail"value=<%=locals.employees[i].userEmail%> aria-label="readonly input example" readonly style="width:15vw;margin:auto;"></td>
+                        <td><input class="form-control col-2 input-<%=locals.employees[i].id%>" type="text" name="isAdmin" value=<%=locals.employees[i].isAdmin%> aria-label="readonly input example" readonly style="width:15vw;margin:auto;"></td>
+                        <td><button type="button" class="btn btn-dark edit-button" data-employeeId=<%=locals.employees[i].id%>>Edit</button></td>
+                        <td><button type="submit" class="btn btn-success" id="submitButton-<%=locals.employees[i].id%>" style="display:none">submit</button></td>
+                    </form>
+                </tr>
+                          
+                         
+                <% } %>  
+
+        </tbody>
+      </table>
+<script src="/js/admin_employee_view.js"></script>

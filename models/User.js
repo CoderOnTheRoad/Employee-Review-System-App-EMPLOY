@@ -3,6 +3,11 @@ const mongoose = require("mongoose");
 const userSchema=mongoose.Schema({
     userName:{
         type:String,
+        default:"NOT_MENTIONED",
+    },
+    EID:{
+        type:String,
+        default:"NOT_ASSIGNED",
     },
     userEmail:{
         type:String,
