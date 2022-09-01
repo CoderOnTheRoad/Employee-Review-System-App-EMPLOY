@@ -1,0 +1,46 @@
+<table class="table" style="text-align:center;width:100vw;">
+    <thead style="color:white;" >
+      <tr style="border: 1px solid white">
+        <th scope="col" rowspan="2" style="border: 1px solid white">#</th>
+        <th scope="col" colspan="2" style="border: 1px solid white">Reviewee </th>
+        <th scope="col" colspan="2" style="border: 1px solid white">Reviewer</th>
+        <th scope="col" rowspan="2" style="border: 1px solid white">Rating</th>
+        <th scope="col" rowspan="2" style="border: 1px solid white">Review</th>
+        <th scope="col" rowspan="2" style="border: 1px solid white">date Submitted </th>
+        <th scope="col" colspan="2" rowspan="2" style="border: 1px solid white">Action</th>
+      </tr>
+      <tr style="border: 1px solid white">
+        <td style="border: 1px solid white">Name</td>
+        <td style="border: 1px solid white">Email</td>
+        <td style="border: 1px solid white">Name</td>
+        <td style="border: 1px solid white">Email</td>
+     </tr>
+    </thead>
+    <tbody>
+
+        <% for(let i =0;i<locals.reviews.length;i++){ %>
+            <tr>
+                <th scope="row" style="color:white;"><%=i+1%> </th>
+                <form method="post" action="/admin/review/update/<%=locals.reviews[i].id%>">
+                    <td><input class="form-control col-2" type="text" name="userName"value="<%=locals.reviews[i].reviewer.userName%>" aria-label="readonly input example" readonly style="width:10vw;margin:auto;"></td>
+                    <td><input class="form-control col-2>" type="text" name="EID"value="<%=locals.reviews[i].reviewer.userEmail%>" aria-label="readonly input example" readonly style="width:10vw;margin:auto;"></td>
+                    <td><input class="form-control col-2>" type="text" name="userEmail"value="<%=locals.reviews[i].reviewee.userName%>" aria-label="readonly input example" readonly style="width:10vw;margin:auto;"></td>
+                    <td><input class="form-control col-2>" type="text" name="isAdmin" value="<%=locals.reviews[i].reviewee.userEmail%>" aria-label="readonly input example" readonly style="width:10vw;margin:auto;"></td>
+                    <td><input class="form-control col-2 input-<%=locals.reviews[i].id%>" type="text" name="review" value="<%=locals.reviews[i].review%>" aria-label="readonly input example" readonly style="width:10vw;margin:auto;"></td>
+                    <td><input class="form-control col-2 input-<%=locals.reviews[i].id%>" type="text" name="reviewstring" value="<%=locals.reviews[i].reviewstring%>" aria-label="readonly input example" readonly style="width:10vw;margin:auto;"></td>
+                    <td><input class="form-control col-2 >" type="text" value="<%=locals.reviews[i].createdAt%>" aria-label="readonly input example" readonly style="width:10vw;margin:auto;"></td>
+                    <td id="table-data-edit-<%=locals.reviews[i].id%>"><button type="button" class="btn btn-dark edit-button" data-reviewId=<%=locals.reviews[i].id%>><i class="fa-solid fa-pen-to-square"></i></button></td>
+                    <td style="display:none" id="table-data-submit-<%=locals.reviews[i].id%>"><button type="submit" class="btn btn-success" id="submitButton-<%=locals.reviews[i].id%>" style="display:none">submit</button></td>
+                    
+                </form>
+                <form action="/admin/review/delete/<%=locals.reviews[i].id%>" method="post">
+                  <td><button type="submit" class="btn btn-dark delete-button" data-employeeId=<%=locals.reviews[i].id%>><i class="fa-solid fa-trash-can" style="color:red;"></i></button></td>
+                </form>
+            </tr>
+                      
+                     
+            <% } %>  
+
+    </tbody>
+  </table>
+  <script src="/js/admin_all_reviews.js"></script>

@@ -1,13 +1,38 @@
-<form method="post" action="/admin/create-task">
+<link rel="stylesheet" href="css/admin_create_task.css">
+<!-- <form method="post" action="/admin/create-task">
     <select name="reviewee">
-        <%for(let i=0;i<locals.users.length;i++){%>
-        <option value="<%=locals.users[i].id%>"><%=locals.users[i].userEmail%></option>
-        <% } %> 
+        <%//for(let i=0;i<locals.users.length;i++){%>
+        <option value="<%=//locals.users[i].id%>"><%=//locals.users[i].userEmail%></option>
+        <%// } %> 
     </select>
     <select name="reviewer">
-        <%for(let i=0;i<locals.users.length;i++){%>
-        <option value="<%=locals.users[i].id%>"><%=locals.users[i].userEmail%></option>
-        <% } %> 
+        <%//for(let i=0;i<locals.users.length;i++){%>
+        <option value="<%=//locals.users[i].id%>"><%=//locals.users[i].userEmail%></option>
+        <%// } %> 
     </select>
     <button type="submit">Create Review</button>
+</form> -->
+<form action="/admin/create-task" method="post">
+<div class="d-flex flex-row justify-content-center align-items-center mt-5" >
+<div class="card text-center" style="width:40vw; height:70vh;background-color: lightblue;opacity:0.9;">
+    <h5 class="card-title">Reviewer</h5>
+    <input class="form-control form-control" placeholder="Search for the reviewer by Username,EID or UserEmail "type="text" name="" id="searchReviewer" style="opacity:1;">
+    <div id="reviewerContainer" >
+    
+    </div>
+</div>
+<div class="card text-center text-bg-warning" style="width:40vw; height:70vh; opacity:0.9;">
+    <h5 class="card-title">Reviewee</h5>
+    <input class="form-control form-control" placeholder="Search for the reviewee by Username,EID or UserEmail "type="text" name="" id="searchReviewee">
+    <div id="revieweeContainer">
+    
+    </div>
+</div>
+</div>
+<button type="submit" class="btn btn-success btn-lg" style="width:50%;position: relative;left: 25vw;margin-top: 10px;">Create Task</button>
 </form>
+
+<!-- <select  name="reviewer" id="reviewer" >
+    
+</select> -->
+<script src="/js/admin_create_task.js"></script>

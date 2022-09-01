@@ -1,4 +1,5 @@
 const { urlencoded } = require("express");
+const flash=require("connect-flash");
 const express = require("express");
 const app=express();
 const port = 8000;
@@ -10,6 +11,7 @@ const session= require("express-session");
 const MongoStore=require("connect-mongo");
 const db=require("./config/mongoose");
 
+const customMware=require("./config/flashMiddleware");
 app.use(session({
     secret: "secretERS",
     saveUninitialized:true,
@@ -24,6 +26,7 @@ app.use(session({
     }
   ),
 }));
+
 app.set("view engine","ejs");
 app.set("views","./views");
 app.use(express.static("./assets"));
@@ -36,10 +39,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 //whenever app is running this mmiddleware will check if there is a session cookie or not and it will pass the user details to the respose locals
 app.use(passport.setAuthenticatedUser);
+//flash messages 
+app.use(flash());
+app.use(customMware.setFlash);
 
 
 app.use("/",require("./routers"));
-
 
 
 app.listen(port,(err)=>{

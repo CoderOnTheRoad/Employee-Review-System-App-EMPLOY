@@ -1,19 +1,39 @@
 <!-- <%=//locals.reviewsToDo%>  -->
+<div style="display:flex;flex-direction: row;width:80%; height:80vh">
+<div style="width:20vw;height:91vh;background-color: bisque; opacity:0.8;position: relative;left:0px;text-align: center;">
+  <h4>Tasks</h4>
+  <div style="display: flex;flex-direction:row ; justify-content: space-around;">
+  <% for(let i=0;i<reviewsToDo.length;i++){ %>
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#review-<%=reviewsToDo[i].id%>" aria-expanded="false" aria-controls="review-<%=reviewsToDo[i].id%>" style="width:auto;height:40px">
+      Task-<%=i+1%> 
+    </button>
 
-<% for(let review of reviewsToDo){ %>
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Review<%=review.id%> </h5>
-          <h6 class="card-subtitle mb-2 text-muted">for- <%=review.reviewee.userEmail%> </h6>
-          <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-          <!-- <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a> -->
-          <form action="/review/submit/<%=review.id%>" method="post">
-            <label for="rating" class="form-label">Rating</label>
-            <input type="range" class="form-range" min="0" max="5" id="rating"name="review">
-            <button type="submit" class="btn btn-warning">Submit</button>
-          </form>
+  <% } %> 
+  </div>
+</div>
 
+
+<div style="width:70vw; height: 100%; display: flex; flex-direction: row;">
+  <% for(let review of reviewsToDo){ %>
+      <div class="collapse" id="review-<%=review.id%>">
+      <div class="card text-bg-dark" style="width: 18rem; height:45vh;" >
+          <div class="card-body">
+            <h5 class="card-title">Review For </h5>
+            <h6 class="card-subtitle mb-2 ">Name- <%=review.reviewee.userName%> </h6>
+            <h6 class="card-subtitle mb-2 ">Email- <%=review.reviewee.userEmail%> </h6>
+            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+            <!-- <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a> -->
+            <form action="/review/submit/<%=review.id%>" method="post">
+              <label for="rating" class="form-label">Rating</label>
+              <input type="range" class="form-range" min="0" max="5" id="rating"name="review">
+              <textarea class="form-control"name="reviewstring" id="reviewstring" rows="3"></textarea>
+              <button type="submit" class="btn btn-warning">Submit</button>
+            </form>
+
+          </div>
         </div>
       </div>
-<% } %> 
+  <% } %> 
+</div>
+</div>

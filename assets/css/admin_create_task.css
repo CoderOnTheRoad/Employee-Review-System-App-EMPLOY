@@ -1,0 +1,8 @@
+
+#revieweeContainer::-webkit-scrollbar {
+    display: none;
+}
+#revieweeContainer{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

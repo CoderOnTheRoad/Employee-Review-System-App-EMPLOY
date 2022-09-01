@@ -6,7 +6,13 @@ const adminController=require("../controllers/admin-controller");
 const reviewController=require("../controllers/review-controller");
 router.get("/view-employees",passport.checkAuthenticationAdmin,adminController.viewEmployees);
 router.post("/user/update/:id",passport.checkAuthenticationAdmin,adminController.updateEmployee);
+router.post("/review/update/:id",passport.checkAuthenticationAdmin,adminController.updateReview);
 router.get("/getallemployees",passport.checkAuthenticationAdmin,adminController.createTask);
 router.post("/create-task",passport.checkAuthenticationAdmin,reviewController.createReview);
-
+router.post("/user/delete/:id",passport.checkAuthenticationAdmin,adminController.deleteEmployee);
+router.post("/review/delete/:id",passport.checkAuthenticationAdmin,adminController.deleteReview);
+router.get("/reviews",passport.checkAuthenticationAdmin,adminController.showAllReviews);
+router.get("/getAllEmployeesApi",passport.checkAuthenticationAdmin,adminController.getAllEmployeesApi);
+router.get("/add-employee-page",passport.checkAuthenticationAdmin,adminController.addEmployeePage);
+router.post("/add-new-employee",passport.checkAuthenticationAdmin,adminController.addNewEmployee);
 module.exports=router;

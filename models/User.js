@@ -3,11 +3,11 @@ const mongoose = require("mongoose");
 const userSchema=mongoose.Schema({
     userName:{
         type:String,
-        default:"NOT_MENTIONED",
+        // default:"NOT_MENTIONED",
     },
     EID:{
         type:String,
-        default:"NOT_ASSIGNED",
+        // default:"NOT_ASSIGNED",
     },
     userEmail:{
         type:String,
@@ -28,7 +28,7 @@ const userSchema=mongoose.Schema({
     //         ref:"Review",
     //     }
     // ]
-});
+},{timestamps:true});
 
 const User= mongoose.model("User",userSchema);
 module.exports=User;

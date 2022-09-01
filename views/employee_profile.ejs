@@ -1,0 +1,33 @@
+<div class="card text-center text-bg-dark" style="width:50vw;opacity:0.9;position: absolute;left:25vw;top:15vh">
+    <img src="/images/user.png" class="card-img-top" alt="..." style="width:200px;height:200px;margin:auto">
+    <div class="card-body">
+      <%if(isAdmin){%> 
+        <h5 class="card-title">Hi, <span style="color:red;">Admin</span>  </h5>
+      <%}else{%> 
+        <h5 class="card-title">Hi, <span style="color:goldenrod;">User</span>  </h5>
+      <% } %> 
+      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a> -->
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user-check"></i></span>
+        <input type="text" class="form-control" value="<%=locals.userName%> "placeholder="" name="userName" aria-describedby="basic-addon1" readonly>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon2"><i class="fa-solid fa-at"></i></span>
+        <input type="text" class="form-control" value="<%=locals.userEmail%>"placeholder="" name="userEmail" aria-describedby="basic-addon2" readonly>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon3"><i class="fa-solid fa-hammer"></i></span>
+        <%if(isAdmin){%> 
+            <input type="text" class="form-control" value="true"placeholder="Admin" name="isAdmin" aria-describedby="basic-addon3" readonly>
+          <%}else{%> 
+            <input type="text" class="form-control" value="true"placeholder="No Admin Rights" name="isAdmin" aria-describedby="basic-addon3" readonly>
+          <% } %> 
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon4">EID</span>
+        <input type="text" class="form-control" value="<%=locals.EID%>"placeholder="" name="EID" aria-describedby="basic-addon4" readonly>
+      </div>
+
+    </div>
+  </div>

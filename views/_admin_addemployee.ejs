@@ -1,0 +1,26 @@
+<!-- <div style="color: white;">Hi</div> -->
+<div class="card text-center" style="width:50vw;position:absolute;top:25vh;left:25vw">
+    <div class="card-header">
+      ADD NEW EMPLOYEE
+    </div>
+    <div class="card-body text-bg-dark">
+      <!-- <h5 class="card-title">Special title treatment</h5>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+      <form action="/admin/add-new-employee" method="post">
+        <input class="form-control" type="text" placeholder="Employee Name" aria-label="" name="userName" style="background-color:#212529;color:white !important;font-weight:bolder;">
+        <input class="form-control" type="text" placeholder="Employee Email" aria-label="" name="userEmail" style="background-color:#212529;color:white !important;font-weight:bolder;">
+        <input class="form-control" type="password" placeholder="password" aria-label="" name="password" style="background-color:#212529;color:white !important;font-weight:bolder;">
+        <input class="form-control" type="text" placeholder="EID" aria-label="" name="EID" style="background-color:#212529;color:white !important;font-weight:bolder;">
+        <select class="form-select form-select-sm" name="isAdmin" >
+            <option selected>Is this New employee An Admin?</option>
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+          </select>
+        <button type="submit" class="btn btn-primary" style="margin-top:5px;">CREATE</button>
+      </form>
+      <!-- <a href="#" >Go somewhere</a> -->
+    </div>
+    <div class="card-footer text-muted" style="background-color:lightcyan;">
+
+    </div>
+  </div>
