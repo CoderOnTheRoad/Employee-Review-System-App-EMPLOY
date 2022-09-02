@@ -1,8 +1,9 @@
+require("dotenv").config();
 const { urlencoded } = require("express");
 const flash=require("connect-flash");
 const express = require("express");
 const app=express();
-const port = 8000;
+const port = process.env.PORT||8000;
 const passport=require("passport");
 const passportLocal=require("./config/passport-local");
 const expressEjsLayout= require("express-ejs-layouts");
@@ -18,7 +19,7 @@ app.use(session({
     cookie: { maxAge:(1000*60*100) },
     resave: false,
     store:MongoStore.create({
-      mongoUrl:"mongodb://localhost/ERS",
+      mongoUrl:process.env.MONGODB_URI||"mongodb://localhost/ERS",
       autoRemove: "disabled",
     },
     function(err){
