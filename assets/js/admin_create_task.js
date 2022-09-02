@@ -6,12 +6,14 @@ let searchReviewee= document.getElementById("searchReviewee");
 let reviewerContainer=document.getElementById("reviewerContainer");
 let revieweeContainer=document.getElementById("revieweeContainer");
 searchReviewer.addEventListener("keyup",(e)=>{
-    let url="/admin/getAllEmployeesApi";
+    let url="https://employee-review-system-employ.herokuapp.com/admin/getallemployeesApi"||"/admin/getAllEmployeesApi";
     let keyword=e.target.value.toLowerCase();
     reviewerContainer.innerHTML="";
     console.log(keyword);
     fetch(url).then(response=>response.json()).then(data=>{
+
         let users=data.data;
+        console.log(users);
         for(let user of users){
             if(user.userName.toLowerCase().match(keyword)||user.userEmail.toLowerCase().match(keyword)||user.EID.toLowerCase().match(keyword)){
 
