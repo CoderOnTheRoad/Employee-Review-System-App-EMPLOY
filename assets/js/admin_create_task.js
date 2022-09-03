@@ -13,7 +13,7 @@ searchReviewer.addEventListener("keyup",(e)=>{
     fetch(url).then(response=>response.json()).then(data=>{
 
         let users=data.data;
-        console.log(users);
+        // console.log(users);
         for(let user of users){
             if(user.userName.toLowerCase().match(keyword)||user.userEmail.toLowerCase().match(keyword)||user.EID.toLowerCase().match(keyword)){
 

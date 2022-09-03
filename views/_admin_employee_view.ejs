@@ -14,10 +14,10 @@
                 <tr>
                     <th scope="row" style="color:white;"><%=i+1%> </th>
                     <form method="post" action="/admin/user/update/<%=locals.employees[i].id%>">
-                        <td><input class="form-control col-2 input-<%=locals.employees[i].id%>" type="text" name="userName"value=<%=locals.employees[i].userName%> aria-label="readonly input example" readonly style="width:10vw;margin:auto;"></td>
-                        <td><input class="form-control col-2 input-<%=locals.employees[i].id%>" type="text" name="EID"value=<%=locals.employees[i].EID%> aria-label="readonly input example" readonly style="width:10vw;margin:auto;"></td>
-                        <td><input class="form-control col-2 input-<%=locals.employees[i].id%>" type="text" name="userEmail"value=<%=locals.employees[i].userEmail%> aria-label="readonly input example" readonly style="width:10vw;margin:auto;"></td>
-                        <td><input class="form-control col-2 input-<%=locals.employees[i].id%>" type="text" name="isAdmin" value=<%=locals.employees[i].isAdmin%> aria-label="readonly input example" readonly style="width:10vw;margin:auto;"></td>
+                        <td><input class="form-control col-2 input-<%=locals.employees[i].id%>" type="text" name="userName"value="<%=locals.employees[i].userName%>" aria-label="readonly input example" readonly style="width:10vw;margin:auto;"></td>
+                        <td><input class="form-control col-2 input-<%=locals.employees[i].id%>" type="text" name="EID"value="<%=locals.employees[i].EID%>" aria-label="readonly input example" readonly style="width:10vw;margin:auto;"></td>
+                        <td><input class="form-control col-2 input-<%=locals.employees[i].id%>" type="text" name="userEmail"value="<%=locals.employees[i].userEmail%>" aria-label="readonly input example" readonly style="width:10vw;margin:auto;"></td>
+                        <td><input class="form-control col-2 input-<%=locals.employees[i].id%>" type="text" name="isAdmin" value="<%=locals.employees[i].isAdmin%>" aria-label="readonly input example" readonly style="width:10vw;margin:auto;"></td>
                         <td><button type="button" class="btn btn-dark edit-button" data-employeeId=<%=locals.employees[i].id%>><i class="fa-solid fa-pen-to-square"></i></button></td>
                         
                         <td><button type="submit" class="btn btn-success" id="submitButton-<%=locals.employees[i].id%>" style="display:none">submit</button></td>

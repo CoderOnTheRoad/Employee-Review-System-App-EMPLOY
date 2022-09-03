@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const userSchema=mongoose.Schema({
     userName:{
         type:String,
+        required:true,
         // default:"NOT_MENTIONED",
     },
     EID:{
