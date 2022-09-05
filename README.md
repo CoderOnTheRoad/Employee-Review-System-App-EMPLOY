@@ -27,6 +27,8 @@ connect-mongo, mongoose, cookie-parser, dotenv, ejs, express, express-ejs-layout
     - Change theme of page
     - Submit own task
 
+## Features
+ - to test admin features use <h3>username- test</h3>, <h3 style="color:red">password-1234</h3>,
 
 # Directory Structure
 
