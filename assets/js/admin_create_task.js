@@ -6,7 +6,8 @@ let searchReviewee= document.getElementById("searchReviewee");
 let reviewerContainer=document.getElementById("reviewerContainer");
 let revieweeContainer=document.getElementById("revieweeContainer");
 searchReviewer.addEventListener("keyup",(e)=>{
-    let url="https://employee-review-system-employ.herokuapp.com/admin/getallemployeesApi"||"/admin/getAllEmployeesApi";
+    // let url="https://employee-review-system-employ.herokuapp.com/admin/getallemployeesApi";
+    let url="/admin/getAllEmployeesApi";
     let keyword=e.target.value.toLowerCase();
     reviewerContainer.innerHTML="";
     console.log(keyword);
@@ -42,6 +43,7 @@ searchReviewer.addEventListener("keyup",(e)=>{
 
 searchReviewee.addEventListener("keyup",(e)=>{
     let url="/admin/getAllEmployeesApi";
+
     let keyword=e.target.value.toLowerCase();
     revieweeContainer.innerHTML="";
     console.log(keyword);

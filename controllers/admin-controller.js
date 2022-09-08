@@ -37,8 +37,10 @@ module.exports.createTask=function(req,res){
 }
 module.exports.deleteEmployee=async (req,res)=>{
     try{
+
         const user=await User.findById(req.params.id);
         const reviews=await Review.deleteMany({reviewer:user.id});
+        await Review.deleteMany({reviewee:user.id});
         await User.findByIdAndDelete(req.params.id);
         req.flash("success","Employee Details Deleted");
         return res.redirect("back");
